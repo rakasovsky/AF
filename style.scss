@@ -230,6 +230,9 @@ section {
 }
 
 @media (max-width: 1280px) { 
+    img {
+        height: auto;
+    }
 
     p{
         font-size: 16px;
@@ -274,11 +277,12 @@ section {
     .contacts p {
         margin: 10px;
     }
+    .flamingo {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
  }
  @media (max-width: 600px) { 
-    img {
-        height: auto;
-    }
     p {
         margin: 20px 30px;
     }
