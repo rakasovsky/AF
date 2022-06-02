@@ -6,6 +6,12 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
 }
 
 body::-webkit-scrollbar {
@@ -35,6 +41,10 @@ body {
 
 #myBtn:hover {
   background-color: #555;
+}
+
+.mob {
+  display: none;
 }
 
 h1 {
@@ -367,6 +377,15 @@ section {
 }
 
 @media (max-width: 600px) {
+  .mob {
+    display: block;
+  }
+  .main {
+    height: 50vh;
+  }
+  .desk {
+    display: none;
+  }
   p {
     margin: 20px 30px;
   }

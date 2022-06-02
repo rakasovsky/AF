@@ -5,6 +5,10 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
 }
 
 body::-webkit-scrollbar {
@@ -35,6 +39,9 @@ body {
     background-color: #555; 
   }
    
+.mob {
+    display: none;
+}
 
 h1 {
     color: orangered;
@@ -283,6 +290,19 @@ section {
     }
  }
  @media (max-width: 600px) { 
+
+    .mob {
+        display: block;
+    }
+    
+    .main {
+        height: 50vh;
+    }
+
+    .desk {
+        display: none;
+    }
+
     p {
         margin: 20px 30px;
     }
