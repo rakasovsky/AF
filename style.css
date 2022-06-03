@@ -411,6 +411,7 @@ section {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: end;
+    padding: 5px;
   }
   .openbtn {
     padding: 15px;
