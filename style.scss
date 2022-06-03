@@ -315,8 +315,11 @@ section {
     }
     .mob {
         display: flex;
-        justify-content: end;
+        justify-content: space-between;;
         padding: 5px;
+    }
+    .mob_logo {
+        max-width: 190px;
     }
     .openbtn {
         padding: 15px;

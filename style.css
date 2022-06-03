@@ -408,10 +408,13 @@ section {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: end;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 5px;
+  }
+  .mob_logo {
+    max-width: 190px;
   }
   .openbtn {
     padding: 15px;
