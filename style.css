@@ -401,6 +401,8 @@ section {
 @media (max-width: 600px) {
   nav {
     padding-bottom: 0;
+    position: -webkit-sticky;
+    position: sticky;
   }
   .mob {
     display: -webkit-box;
