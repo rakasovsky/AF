@@ -2,6 +2,9 @@
     font-family:Helvetica-light;
     src: url(assets/fonts/Helvetica-Light.otf);
 }
+html {
+    scroll-behavior: smooth;
+  }
 *{
     margin: 0;
     padding: 0;
@@ -9,15 +12,17 @@
 }
 a{
     text-decoration: none;
+    color: black;
 }
+a:visited {
+    text-decoration: none;
+  }
 
 body::-webkit-scrollbar {
     display: none;
 } 
 
-body {
-    scroll-behavior: smooth;
-}
+
 
 header{
     position: sticky;
@@ -251,6 +256,16 @@ section {
     }
     p {
         margin: 0;
+    }
+    .blk:hover {
+        background-color: #222;
+        color: white;
+    }
+    .blue:hover{
+        background-color:#00ffff;
+    }
+    .red:hover {
+        background-color:red;
     }
 }
 

@@ -15,13 +15,13 @@
     <header>
         <nav class="nav desk">
             <div class="logo">
-                <img src="/assets/img/AForm.png" alt="">
+               <a href="/"><img src="/assets/img/AForm.png" alt="logo"></a>
             </div>
             <div class="menu">
                 <ul>
                     <li>Gallery</li>
                     <li>About</li>
-                    <li>Contacts</li>
+                    <li class="btn">Contacts</li>
                 </ul>
             </div>
         </nav>
@@ -229,7 +229,7 @@
         <img src="/assets/img/a25_1.png" loading="lazy" alt="">
     </section>
     <section class="vert cont">
-        <div class="contacts">
+        <div class="contacts" id="contacts_bot">
             <h3>
                 Contacts
             </h3>
@@ -237,16 +237,16 @@
                 Email: <a href="mailto:work@aformstudio.com">work@aformstudio.com</a> 
             </p>    
             <p>
-                WhatsApp: <a href="https://wa.me/+380672531208" target="_blank">+380672531208</a>
+                WhatsApp: <a href="https://wa.me/+380672531208" target="_blank" class="blk">+380672531208</a>
             </p>
             <p>
-                Instagram: <a href="https://www.instagram.com/@a_form_studio" target="_blank">@a_form_studio</a>
+                Instagram: <a href="https://www.instagram.com/@a_form_studio" target="_blank" class="blue">@a_form_studio</a>
             </p>
             <p>
-                Facebook: <a href="https://www.facebook.com/aform.visualization.studio" target="_blank">@aform.visualization.studio </a>
+                Facebook: <a href="https://www.facebook.com/aform.visualization.studio" target="_blank" class="red">@aform.visualization.studio </a>
             </p>
             <p>
-                Linkedin:<a href="https://ua.linkedin.com/in/daria-maistat-199890105/en" target="_blank"> Daria Maistat</a>
+                Linkedin:<a href="https://ua.linkedin.com/in/daria-maistat-199890105/en" target="_blank" class="blk">Daria Maistat</a>
             </p>
         </div>
         <div>
@@ -292,5 +292,18 @@ function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
 
+// scroll to contacts
+
+var hiddenElement = document.getElementById("contacts_bot");
+var btn = document.querySelector('.btn');
+
+function handleButtonClick() {
+   hiddenElement.scrollIntoView({block: "center", behavior: "smooth"});
+}
+
+btn.addEventListener('click', handleButtonClick);
+
 </script>
+
+
 
