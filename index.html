@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <nav class="desk">
+        <nav class="nav desk">
             <div class="logo">
                 <img src="/assets/img/AForm.png" alt="">
             </div>
@@ -22,9 +22,24 @@
             </div>
         </nav>
         <nav class="mob">
-          
+            <div id="myNav" class="overlay">
+
+                <!-- Button to close the overlay navigation -->
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              
+                <!-- Overlay content -->
+                <div class="overlay-content">
+                        <img src="/assets/img/AForm.png" alt="">
+                        <a href="/">Gallery</a>
+                        <a href="/">About</a>
+                        <a href="/">Contacts</a>
+                </div>
+              
+              </div>
+              <span onclick="openNav()" class="openbtn">Menu</span>
         </nav>
     </header>
+    
     <div class="main">
         <div>
             <img src="/assets/img/AForm.png" alt="">
@@ -255,6 +270,15 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0; 
   document.documentElement.scrollTop = 0; 
+}
+
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
 }
 
 </script>
