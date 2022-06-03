@@ -21,16 +21,14 @@ a:visited {
 body::-webkit-scrollbar {
     display: none;
 } 
-
-
-
 header{
     position: sticky;
+    display: flex;
+    height: 90px;
     top: 0;
     background-color: white;
     width: 100%;
 }
-
 #myBtn {
     display: none; 
     position: fixed; 
@@ -158,12 +156,11 @@ section {
         width: 50%;
     }
 }
-.blc5 {
-    // .text_img {
-    //     width: 60%;
-    // }
-}
-
+// .blc5 {
+//     .text_img {
+//         width: 60%;
+//     }
+// }
 .text_img {
     display: flex;
     flex-direction: column;
@@ -267,6 +264,54 @@ section {
     .red:hover {
         background-color:red;
     }
+}
+
+
+// Gallery page
+article {
+    height: 100vh;
+    margin-top: 10%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    overflow: hidden;
+}
+.filterDiv {
+    float: left;
+    background-color: #2196F3;
+    color: #ffffff;
+    min-width: 320px;
+    line-height: 100px;
+    text-align: center;
+    margin: 2px;
+    display: none; 
+}
+
+.show {
+    display: block;
+}
+
+/* Style the buttons */
+.btn2 {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Add a light grey background on mouse-over */
+.btn2:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background to the active button */
+.btn2.active {
+  background-color: #666;
+  color: white;
 }
 
 @media (max-width: 1280px) { 
