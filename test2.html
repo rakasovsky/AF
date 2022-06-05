@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" rel="stylesheet"
+        type="text/css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js">
+    </script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/fav/favicon-16x16.png">
+    <link rel="manifest" href="/assets/fav/site.webmanifest">
+</head>
+<body>
+    <div id="arch"></div>
+    <div id="design"></div>
+    <div id="product"></div>
+</body>
+</html> 
+
+<script>
+    $(document).ready(function () {
+    $("#arch ").nanogallery2({
+        items: [
+          // album 1
+          { src: 'M_J_exterior_1 copy.jpg',                         title: 'Figure',  ID: 1,	kind:'album' },
+          { src: 'M_J_exterior_1 copy.jpg', srct: 'M_J_exterior_1 copy.jpg', title: 'image A1', ID: 10, albumID: 1 },
+         
+          
+          // album 2
+          {	src: 'M_J_exterior_1 copy.jpg',                         title: 'LL SINK ROOM',  ID: 2,  kind:'album' },
+          { src: 'M_J_exterior_1 copy.jpg', srct: 'M_J_exterior_1 copy.jpg', title: 'image B1', ID: 20, albumID: 2 },
+         
+        ],
+        thumbnailWidth:  '450px',
+        thumbnailHeight: 'auto',
+        itemsBaseURL:    '/assets/img/1_ARCH/',
+      });
+
+      $("#design ").nanogallery2({
+        items: [
+          // album 1
+          { src: '1_TV area copy.jpg',                         title: 'Figure',  ID: 1,	kind:'album' },
+          { src: '1_TV area copy.jpg', srct: '1_TV area copy.jpg', title: 'image A1', ID: 10, albumID: 1 },
+         
+          
+          // album 2
+          {	src: '1_TV area copy.jpg',                         title: 'LL SINK ROOM',  ID: 2,  kind:'album' },
+          { src: '1_TV area copy.jpg', srct: '1_TV area copy.jpg', title: 'image B1', ID: 20, albumID: 2 },
+        ],
+        thumbnailWidth:  '450px',
+        thumbnailHeight: 'auto',
+        itemsBaseURL:    '/assets/img/2_DIZ/',
+      });
+      $("#product ").nanogallery2({
+        items: [
+          // album 1
+          { src: '1_FC_result.jpg',                         title: 'Figure',  ID: 1,	kind:'album' },
+          { src: '1_FC_result.jpg', srct: '1_FC_result.jpg', title: 'image A1', ID: 10, albumID: 1 },
+         
+          
+          // album 2
+          {	src: '1_FC_result.jpg',                         title: 'LL SINK ROOM',  ID: 2,  kind:'album' },
+          { src: '1_FC_result.jpg', srct: '1_FC_result.jpg', title: 'image B1', ID: 20, albumID: 2 },
+        ],
+        thumbnailWidth:  '450px',
+        thumbnailHeight: 'auto',
+        itemsBaseURL:    '/assets/img/3_PROD/',
+      });
+    });
+  </script>

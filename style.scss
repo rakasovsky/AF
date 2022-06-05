@@ -9,6 +9,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Helvetica-light';
 }
 a{
     text-decoration: none;
@@ -269,7 +270,7 @@ section {
 
 // Gallery page
 article {
-    height: 100vh;
+    // height: 100vh;
     margin-top: 10%;
     display:flex;
     flex-direction: column;
@@ -278,10 +279,13 @@ article {
 }
 .container {
     overflow: hidden;
+    width: 100%;
+    padding: 60px;
 }
 .filterDiv {
-    float: left;
-    background-color: #2196F3;
+    
+    // float: left;
+    // background-color: #2196F3;
     color: #ffffff;
     min-width: 320px;
     line-height: 100px;
@@ -292,6 +296,7 @@ article {
 
 .show {
     display: block;
+    // display: flex;
 }
 
 /* Style the buttons */
@@ -310,7 +315,7 @@ article {
 
 /* Add a dark background to the active button */
 .btn2.active {
-  background-color: #666;
+  background-color: black;
   color: white;
 }
 
