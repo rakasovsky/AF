@@ -127,6 +127,9 @@ nav .menu ul li {
 
 nav .menu ul li:first-child:hover {
   background-color: #222;
+}
+
+nav .menu ul li:first-child:hover a {
   color: white;
 }
 
@@ -361,6 +364,86 @@ section {
   background-color: red;
 }
 
+.cntct_f {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 630px;
+  margin-top: 80px;
+}
+
+.cntct_f * {
+  padding: 0 15px;
+}
+
+.cntct_f h2 {
+  margin-bottom: 30px;
+  padding: 0;
+}
+
+.cntct_f form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.cntct_f form .half {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.cntct_f form .half p {
+  width: 50%;
+}
+
+.cntct_f form .full {
+  width: 100%;
+}
+
+.cntct_f form input {
+  padding: 15px 16px;
+  border: solid 1px #c9c9c9;
+  font-family: Helvetica-light;
+  font-size: 16px;
+  color: #787878;
+  -webkit-transition: border-color .3s ease;
+  transition: border-color .3s ease;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.cntct_f form textarea {
+  width: 100%;
+  resize: none;
+  height: 150px;
+  padding: 24px;
+}
+
+.cntct_f form .snd_btn {
+  display: inline-block;
+  vertical-align: top;
+  padding: 17px 44px;
+  font-size: 16px;
+  line-height: 1;
+  color: #000;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 500;
+  border: solid 1px #ffb74d;
+  background-color: #ffb74d;
+  cursor: pointer;
+  -webkit-transition: background-color .3s ease;
+  transition: background-color .3s ease;
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+
 article {
   margin-top: 10%;
   display: -webkit-box;
@@ -395,6 +478,8 @@ article {
 
 .show {
   display: block;
+  min-width: 320px;
+  height: auto;
 }
 
 /* Style the buttons */

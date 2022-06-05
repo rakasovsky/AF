@@ -15,6 +15,37 @@
     <link rel="manifest" href="/assets/fav/site.webmanifest">
 </head>
 <body>
+    <header>
+        <nav class="nav desk">
+            <div class="logo">
+            <a href="/"><img src="/assets/img/AForm.png" alt="logo"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li> <a href="/gallery.html">Gallery</a></li>
+                    <!-- <li>About</li> -->
+                    <li class=""><a href="/contact.html">Contacts</a>
+                </ul>
+            </div>
+        </nav>
+        <nav class="mob">
+            <div id="myNav" class="overlay">
+
+                <!-- Button to close the overlay navigation -->
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            
+                <!-- Overlay content -->
+                <div class="overlay-content">
+                        <a href="/gallery">Gallery</a>
+                        <!-- <a href="/">About</a> -->
+                        <a href="/contact.html">Contacts</a>
+                </div>
+            
+            </div>
+            <img src="/assets/img/AForm.png" class="mob_logo" alt="">
+            <span onclick="openNav()" class="openbtn">Menu</span>
+        </nav>
+    </header>
     <section class="vert cont">
         <div class="contacts" id="contacts_bot">
             <h3>
@@ -35,22 +66,36 @@
             <p>
                 Linkedin:<a href="https://ua.linkedin.com/in/daria-maistat-199890105/en" target="_blank" class="blk">Daria Maistat</a>
             </p>
-            <form name="contact" method="POST" data-netlify="true">
-                <p>
-                  <label>Your Name: <input type="text" name="name" /></label>
-                </p>
-                <p>
-                  <label>Your Email: <input type="email" name="email" /></label>
-                </p>
-              
-                <p>
-                  <label>Message: <textarea name="message"></textarea></label>
-                </p>
-                <div data-netlify-recaptcha="true"></div>
-                <p>
-                  <button type="submit">Send</button>
-                </p>
-              </form>
+
+            <div class="cntct_f">
+                <h2>Let's grab a coffee and jump on
+                    conversation chat with us.</h2>
+                <form name="contact" method="POST" data-netlify="true">
+                    <div class="half">
+                        <p>
+                            <input type="text" name="name" placeholder="Your Name" required />
+                          </p>
+                          <p>
+                           <input type="email" name="email" placeholder="Email" required />
+                          </p>
+                    </div>
+                    <div class="full">
+                        <p>
+                            <input type="text" name="subject" placeholder="Subject" required />
+                        </p>
+                        <p>
+                            <textarea name="message" placeholder="Message" required></textarea>
+                        </p>
+                    </div>
+
+                    <div data-netlify-recaptcha="true"></div>
+                        
+                        
+                    <button type="submit" class="snd_btn">Send</button>
+                        
+                </form>    
+            </div>
+          
         </div>
         <div>
             <img src="/assets/img/a26_1.png" loading="0" alt="">

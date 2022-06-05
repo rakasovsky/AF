@@ -100,7 +100,9 @@ nav {
             }
             li:first-child:hover {
                 background-color: #222;
-                color: white;
+                a{
+                    color: white;
+                }
             }
             li:nth-child(2):hover{
                 background-color:#00ffff;
@@ -267,6 +269,69 @@ section {
     }
 }
 
+.cntct_f {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 630px;
+    margin-top: 80px;
+    *{
+        padding:0 15px;
+    }
+    h2{
+        margin-bottom: 30px;
+        padding: 0;
+    }
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        .half {
+            display: flex;
+            width: 100%;
+            p{
+                width:50%;
+            }
+        }
+        .full{
+            width: 100%;
+        }
+        input {
+            padding: 15px 16px;
+            border: solid 1px #c9c9c9;
+            font-family:  Helvetica-light;
+            font-size: 16px;
+            color: #787878;
+            transition: border-color .3s ease;
+            margin-bottom: 30px;
+            width: 100%;
+
+
+        }
+        textarea {
+            width: 100%;
+            resize: none;
+            height: 150px;
+            padding: 24px;
+        }
+        .snd_btn {
+            display: inline-block;
+            vertical-align: top;
+            padding: 17px 44px;
+            font-size: 16px;
+            line-height: 1;
+            color: #000;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 500;
+            border: solid 1px #ffb74d;
+            background-color: #ffb74d;
+            cursor: pointer;
+            transition: background-color .3s ease;
+            letter-spacing: 1px;
+            margin-top: 20px;
+        }
+    }
+    
+}
 
 // Gallery page
 article {
@@ -283,7 +348,6 @@ article {
     padding: 60px;
 }
 .filterDiv {
-    
     // float: left;
     // background-color: #2196F3;
     color: #ffffff;
@@ -292,11 +356,14 @@ article {
     text-align: center;
     margin: 2px;
     display: none; 
+    
 }
 
 .show {
     display: block;
     // display: flex;
+    min-width: 320px;
+    height: auto;
 }
 
 /* Style the buttons */
