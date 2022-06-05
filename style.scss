@@ -29,6 +29,7 @@ header{
     top: 0;
     background-color: white;
     width: 100%;
+    z-index: 999;
 }
 #myBtn {
     display: none; 
@@ -358,6 +359,9 @@ article {
     display: none; 
     
 }
+// .nGY2Navigationbar {
+//     float: left;
+// }
 
 .show {
     display: block;
@@ -441,7 +445,9 @@ article {
  }
 
  @media (max-width: 600px) { 
-
+    .dlogo{
+        display: none;
+    }
     nav {
         padding-bottom: 0;
         position:sticky;
