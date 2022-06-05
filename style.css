@@ -700,6 +700,16 @@ article {
   .flamingo {
     display: none;
   }
+  .cntct_f h2 {
+    text-align: center;
+  }
+  .cntct_f form .half {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .cntct_f form .half p {
+    width: 100%;
+  }
 }
 
 @media (max-width: 320px) {

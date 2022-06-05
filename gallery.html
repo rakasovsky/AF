@@ -464,4 +464,24 @@
         itemsBaseURL:    '/assets/img/3_PROD/',
       });
     });
+
+    function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+    }
+
+
+    function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+    }
+
+    // scroll to contacts
+
+    var hiddenElement = document.getElementById("contacts_bot");
+    var btn = document.querySelector('.btn');
+
+    function handleButtonClick() {
+    hiddenElement.scrollIntoView({block: "center", behavior: "smooth"});
+    }
+
+    btn.addEventListener('click', handleButtonClick);
 </script>

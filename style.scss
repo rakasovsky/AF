@@ -580,6 +580,22 @@ article {
     .flamingo {
         display: none;
     }
+
+    .cntct_f {
+        h2 {
+            text-align: center;
+        }
+        form {
+            .half{
+                flex-wrap: wrap; 
+               
+                    p {
+                        width: 100%;
+                    }
+              
+            }
+        }
+    }
  }
  @media (max-width: 320px) {
     .subtitle {
