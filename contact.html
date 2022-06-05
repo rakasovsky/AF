@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" type="text/javascript"></script>
+    </script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/fav/favicon-16x16.png">
+    <link rel="manifest" href="/assets/fav/site.webmanifest">
+</head>
+<body>
+    <section class="vert cont">
+        <div class="contacts" id="contacts_bot">
+            <h3>
+                Contacts
+            </h3>
+            <p>
+                Email: <a href="mailto:work@aformstudio.com">work@aformstudio.com</a> 
+            </p>    
+            <p>
+                WhatsApp: <a href="https://wa.me/+380672531208" target="_blank" class="blk">+380672531208</a>
+            </p>
+            <p>
+                Instagram: <a href="https://www.instagram.com/@a_form_studio" target="_blank" class="blue">@a_form_studio</a>
+            </p>
+            <p>
+                Facebook: <a href="https://www.facebook.com/aform.visualization.studio" target="_blank" class="red">@aform.visualization.studio </a>
+            </p>
+            <p>
+                Linkedin:<a href="https://ua.linkedin.com/in/daria-maistat-199890105/en" target="_blank" class="blk">Daria Maistat</a>
+            </p>
+            <form name="contact" method="POST" data-netlify="true">
+                <p>
+                  <label>Your Name: <input type="text" name="name" /></label>
+                </p>
+                <p>
+                  <label>Your Email: <input type="email" name="email" /></label>
+                </p>
+              
+                <p>
+                  <label>Message: <textarea name="message"></textarea></label>
+                </p>
+                <p>
+                  <button type="submit">Send</button>
+                </p>
+              </form>
+        </div>
+        <div>
+            <img src="/assets/img/a26_1.png" loading="0" alt="">
+        </div>
+    </section>
+</body>
+</html> 
+
+<script>
+    document
+  .querySelector("form")
+  .addEventListener("submit", handleSubmit);
+
+    const handleSubmit = (e) => {
+    e.preventDefault();
+    let myForm = document.getElementById("pizzaOrder");
+    let formData = new FormData(myForm);
+    fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+    })
+        .then(() => console.log("Form successfully submitted"))
+        .catch((error) => alert(error));
+    };
+</script>
