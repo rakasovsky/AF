@@ -295,6 +295,12 @@ section {
             p{
                 width:50%;
             }
+            p:first-child {
+                padding-right: 15px;
+            }
+            p:last-child {
+                padding-left: 15px;
+            }
         }
         .full{
             width: 100%;
@@ -597,6 +603,12 @@ article {
                
                     p {
                         width: 100%;
+                    }
+                    p:first-child {
+                        padding: 0;
+                    }
+                    p:last-child {
+                        padding: 0;
                     }
               
             }

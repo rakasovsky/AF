@@ -404,6 +404,14 @@ section {
   width: 50%;
 }
 
+.cntct_f form .half p:first-child {
+  padding-right: 15px;
+}
+
+.cntct_f form .half p:last-child {
+  padding-left: 15px;
+}
+
 .cntct_f form .full {
   width: 100%;
 }
@@ -712,6 +720,12 @@ article {
   }
   .cntct_f form .half p {
     width: 100%;
+  }
+  .cntct_f form .half p:first-child {
+    padding: 0;
+  }
+  .cntct_f form .half p:last-child {
+    padding: 0;
   }
 }
 
