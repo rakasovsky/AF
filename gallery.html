@@ -72,7 +72,7 @@
                     </li>
                     <li class="splide__slide">
                         <div class="DESIGN">
-                            <h1>DESIGN <span class="garrow">></span></h1>
+                            <h1><span class="garrow"><</span>DESIGN <span class="garrow">></span></h1>
                             <div id="design"></div>
                         </div>
     
@@ -197,11 +197,7 @@
           { src: 'AH_interior_3.jpg', srct: 'AH_interior_3.jpg', title: '', ID: 66, albumID: 4 },
            
           // album 5
-          { src: 'I.T.M.O.N._FIRST_int_1_result.jpg',                         title: 'Silence',  ID: 5,  kind:'album' },
-          { src: 'I.T.M.O.N._FIRST_int_1_result.jpg', srct: 'I.T.M.O.N._FIRST_int_1_result.jpg', title: '', ID: 67, albumID: 5 },
-          { src: 'I.T.M.O.N._FIRST_int_2_result.jpg', srct: 'I.T.M.O.N._FIRST_int_2_result.jpg', title: '', ID: 68, albumID: 5 },
-          { src: 'I.T.M.O.N._FIRST_int_3_result.jpg', srct: 'I.T.M.O.N._FIRST_int_3_result.jpg', title: '', ID: 69, albumID: 5 },
-          { src: 'I.T.M.O.N._FIRST_int_5_result.jpg', srct: 'I.T.M.O.N._FIRST_int_5_result.jpg', title: '', ID: 70, albumID: 5 },
+          { src: 'I.T.M.O.N._FIRST_result.jpg',                         title: 'Silence',  ID: 5,  kind:'album' },
           { src: 'I.T.M.O.N._FIRST_result.jpg', srct: 'I.T.M.O.N._FIRST_result.jpg', title: '', ID: 71, albumID: 5 },
 
           // album 6
@@ -224,11 +220,15 @@
           { src: 'inside copy.jpg', srct: 'inside copy.jpg', title: '', ID: 81, albumID: 8 },
           { src: 'flamingo_LAST_ENOUGH copy.jpg', srct: 'flamingo_LAST_ENOUGH copy.jpg', title: '', ID: 77, albumID: 8 },
         ],
-        thumbnailWidth:  '450px',
+        thumbnailWidth:  '1200px',
         thumbnailHeight: 'auto',
         itemsBaseURL:    '/assets/img/1_ARCH/',
         galleryDisplayTransition:         'slideUp',
-        galleryDisplayTransitionDuration:  500  
+        galleryDisplayTransitionDuration:  500,
+        "thumbnailGutterWidth": 40,
+        "thumbnailGutterHeight": 40,
+        "thumbnailBorderVertical": 0,
+        "thumbnailBorderHorizontal": 0,  
       });
 
       $("#design").nanogallery2({
@@ -367,13 +367,25 @@
           { src: 'Kitchen_v2_result.jpg', srct: 'Kitchen_v2_result.jpg', title: '', ID: 162, albumID: 22 },
           { src: 'Living room_result.jpg', srct: 'Living room_result.jpg', title: '', ID: 163, albumID: 22 },
 
+            // album 5
+          { src: 'I.T.M.O.N._FIRST_int_1_result.jpg',                         title: 'Silence',  ID: 55,  kind:'album' },
+          { src: 'I.T.M.O.N._FIRST_int_1_result.jpg', srct: 'I.T.M.O.N._FIRST_int_1_result.jpg', title: '', ID: 67, albumID: 55 },
+          { src: 'I.T.M.O.N._FIRST_int_2_result.jpg', srct: 'I.T.M.O.N._FIRST_int_2_result.jpg', title: '', ID: 68, albumID: 55 },
+          { src: 'I.T.M.O.N._FIRST_int_3_result.jpg', srct: 'I.T.M.O.N._FIRST_int_3_result.jpg', title: '', ID: 69, albumID: 55 },
+          { src: 'I.T.M.O.N._FIRST_int_5_result.jpg', srct: 'I.T.M.O.N._FIRST_int_5_result.jpg', title: '', ID: 70, albumID: 55 },
+        
+
 
         ],
-        thumbnailWidth:  '450px',
+        thumbnailWidth:  '1200px',
         thumbnailHeight: 'auto',
         itemsBaseURL:    '/assets/img/2_DIZ/',
         galleryDisplayTransition:         'slideUp',
-        galleryDisplayTransitionDuration:  500  
+        galleryDisplayTransitionDuration:  500,
+        "thumbnailGutterWidth": 40,
+        "thumbnailGutterHeight": 40,
+        "thumbnailBorderVertical": 0,
+        "thumbnailBorderHorizontal": 0,   
       });
       $("#product").nanogallery2({
         items: [
@@ -430,12 +442,15 @@
            { src: 'Interior_1_result.jpg', srct: 'Interior_1_result.jpg', title: '', ID: 191, albumID: 29 },
          
         ],
-        thumbnailWidth:  '450px',
+        thumbnailWidth:  '1200px',
         thumbnailHeight: 'auto',
         itemsBaseURL:    '/assets/img/3_PROD/',
         galleryDisplayTransition:         'slideUp',
-        galleryDisplayTransitionDuration:  500, 
-        thumbnailLazyLoad     : false,
+        galleryDisplayTransitionDuration:  500,
+        "thumbnailGutterWidth": 40,
+        "thumbnailGutterHeight": 40,
+        "thumbnailBorderVertical": 0,
+        "thumbnailBorderHorizontal": 0,  
       });
     });
 

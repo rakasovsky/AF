@@ -65,6 +65,10 @@ header {
   display: none;
 }
 
+h1 {
+  margin-bottom: 40px;
+}
+
 p {
   font-family: Helvetica-light;
   font-size: 24px;
