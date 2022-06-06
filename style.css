@@ -380,10 +380,6 @@ section {
   margin-top: 80px;
 }
 
-.cntct_f * {
-  padding: 0 15px;
-}
-
 .cntct_f h2 {
   margin-bottom: 30px;
   padding: 0;
@@ -587,6 +583,7 @@ article {
         -ms-flex-pack: justify;
             justify-content: space-between;
     padding: 5px;
+    z-index: 2;
   }
   .mob_logo {
     max-width: 190px;
@@ -601,7 +598,7 @@ article {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 666;
     left: 0;
     top: 0;
     background-color: black;
