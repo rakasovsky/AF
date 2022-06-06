@@ -111,7 +111,7 @@
     </section>
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 </body>
-
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 </html>
 
 <script>
@@ -167,7 +167,8 @@
     }
 
     $(document).ready(function () {
-    $("#arch ").nanogallery2({
+        
+    $("#arch").nanogallery2({
         items: [
           // album 1
           { src: 'M_J_exterior_1 copy.jpg',                         title: 'BORREGO JIMMY',  ID: 1,	kind:'album' },
@@ -260,9 +261,11 @@
         thumbnailWidth:  '450px',
         thumbnailHeight: 'auto',
         itemsBaseURL:    '/assets/img/1_ARCH/',
+        galleryDisplayTransition:         'slideUp',
+        galleryDisplayTransitionDuration:  500  
       });
 
-      $("#design ").nanogallery2({
+      $("#design").nanogallery2({
         items: [
           // album 1
           { src: '1_TV area copy.jpg',                         title: 'ALESSIA BISHOP AVE',  ID: 9,	kind:'album' },
@@ -403,8 +406,10 @@
         thumbnailWidth:  '450px',
         thumbnailHeight: 'auto',
         itemsBaseURL:    '/assets/img/2_DIZ/',
+        galleryDisplayTransition:         'slideUp',
+        galleryDisplayTransitionDuration:  500  
       });
-      $("#product ").nanogallery2({
+      $("#product").nanogallery2({
         items: [
           // album 1
           { src: '1_FC_result.jpg',                         title: 'FIGURES',  ID: 23,	kind:'album' },
@@ -462,6 +467,9 @@
         thumbnailWidth:  '450px',
         thumbnailHeight: 'auto',
         itemsBaseURL:    '/assets/img/3_PROD/',
+        galleryDisplayTransition:         'slideUp',
+        galleryDisplayTransitionDuration:  500, 
+        thumbnailLazyLoad     : false,
       });
     });
 
@@ -483,5 +491,13 @@
     hiddenElement.scrollIntoView({block: "center", behavior: "smooth"});
     }
 
-    btn.addEventListener('click', handleButtonClick);
+
+ 
+    $('div[filterDiv]').on('show', function (e) {
+    var target = $(e.target).attr("data-gallery") // activated tab
+    $(target).nanogallery2('refresh');
+    })
+
+    // btn.addEventListener('click', handleButtonClick);
 </script>
+

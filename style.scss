@@ -23,7 +23,7 @@ body::-webkit-scrollbar {
     display: none;
 } 
 header{
-    position: sticky;
+    // position: sticky;
     display: flex;
     height: 90px;
     top: 0;
@@ -329,6 +329,7 @@ section {
             transition: background-color .3s ease;
             letter-spacing: 1px;
             margin-top: 20px;
+            margin-left: 10px;
         }
     }
     
