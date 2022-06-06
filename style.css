@@ -65,10 +65,6 @@ header {
   display: none;
 }
 
-h1 {
-  color: orangered;
-}
-
 p {
   font-family: Helvetica-light;
   font-size: 24px;
@@ -185,6 +181,14 @@ img {
 
 .main div img {
   width: 65%;
+}
+
+.garrow {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
 }
 
 .subtitle {
@@ -444,7 +448,7 @@ section {
 }
 
 article {
-  margin-top: 10%;
+  margin: 5% 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

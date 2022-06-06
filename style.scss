@@ -58,7 +58,7 @@ header{
 }
 
 h1 {
-    color: orangered;
+    // color: orangered;
 }
 p {
     font-family: Helvetica-light;
@@ -137,6 +137,10 @@ img{
             width: 65%;
         }
     }
+}
+.garrow {
+    display: inline-flex;
+    transform: translateY(-2px);
 }
 .subtitle {
     font-family: Tahoma;
@@ -338,7 +342,7 @@ section {
 // Gallery page
 article {
     // height: 100vh;
-    margin-top: 10%;
+    margin: 5% 60px;
     display:flex;
     flex-direction: column;
     justify-content: center;

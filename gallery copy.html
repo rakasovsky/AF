@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" rel="stylesheet"
+        type="text/css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js">
+    </script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/fav/favicon-16x16.png">
+    <link rel="manifest" href="/assets/fav/site.webmanifest">
+</head>
+
+<body>
+    <header>
+        <nav class="nav desk">
+            <div class="logo">
+               <a href="/"><img src="/assets/img/AForm.png" alt="logo"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li> <a href="/gallery.html">Gallery</a></li>
+                    <!-- <li>About</li> -->
+                    <li class=""><a href="/contact.html">Contacts</a>
+                </ul>
+            </div>
+        </nav>
+        <nav class="mob">
+            <div id="myNav" class="overlay">
+
+                <!-- Button to close the overlay navigation -->
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              
+                <!-- Overlay content -->
+                <div class="overlay-content">
+                        <a href="/gallery.html">Gallery</a>
+                        <!-- <a href="/">About</a> -->
+                        <a href="/contact.html">Contacts</a>
+                </div>
+              
+              </div>
+              <a href="/"><img src="/assets/img/AForm.png" class="mob_logo" alt=""></a>
+              <span onclick="openNav()" class="openbtn">Menu</span>
+        </nav>
+    </header>
+    <article>
+        <!-- Control buttons -->
+        <div id="myBtnContainer">
+            <button class="btn2 active" onclick="filterSelection('all')"> SHOW ALL</button>
+            <button class="btn2" onclick="filterSelection('ARCHITECTURE')">ARCHITECTURE</button>
+            <button class="btn2" onclick="filterSelection('DESIGN')">DESIGN</button>
+            <button class="btn2" onclick="filterSelection('PRODUCT')">PRODUCT</button>
+        </div>
+
+        <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
+        <div class="container">
+
+            <div class="filterDiv  ARCHITECTURE">
+                <div id="arch"></div>
+            </div>
+
+            <div class="filterDiv  DESIGN">
+                <div id="design"></div>
+            </div>
+
+
+            <div class="filterDiv  PRODUCT">
+                <div id="product"></div>
+            </div>
+            
+        </div>
+    </article>
+
+
+
+
+    <section class="vert cont">
+        <div class="contacts" id="contacts_bot">
+            <h3>
+                Contacts
+            </h3>
+            <p>
+                Email: <a href="mailto:work@aformstudio.com">work@aformstudio.com</a>
+            </p>
+            <p>
+                WhatsApp: <a href="https://wa.me/+380672531208" target="_blank" class="blk">+380672531208</a>
+            </p>
+            <p>
+                Instagram: <a href="https://www.instagram.com/@a_form_studio" target="_blank"
+                    class="blue">@a_form_studio</a>
+            </p>
+            <p>
+                Facebook: <a href="https://www.facebook.com/aform.visualization.studio" target="_blank"
+                    class="red">@aform.visualization.studio </a>
+            </p>
+            <p>
+                Linkedin:<a href="https://ua.linkedin.com/in/daria-maistat-199890105/en" target="_blank"
+                    class="blk">Daria Maistat</a>
+            </p>
+        </div>
+        <div>
+            <img src="/assets/img/a26_1.png" loading="0" alt="">
+        </div>
+    </section>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+</body>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+</html>
+
+<script>
+
+
+    window.addEventListener('load', function(){
+        var target = document.querySelector('#design');
+        console.log(target)
+        $(target).nanogallery2('refresh');
+
+    }) ;
+    window.addEventListener('load', function(){
+        var target = document.querySelector('#product');
+        console.log(target)
+        $(target).nanogallery2('refresh');
+
+    }) ;
+    window.addEventListener('load', function(){
+        var target = document.querySelector('#arch');
+        console.log(target)
+        $(target).nanogallery2('refresh');
+
+    }) ;
+
+    // Filter
+    filterSelection("all")
+
+    function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("filterDiv");
+        if (c == "all") c = "";
+        // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+        for (i = 0; i < x.length; i++) {
+            w3RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+    }
+
+    // Show filtered elements
+    function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) {
+                element.className += " " + arr2[i];
+            }
+        }
+    }
+
+    // Hide elements that are not selected
+    function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+                arr1.splice(arr1.indexOf(arr2[i]), 1);
+            }
+        }
+        element.className = arr1.join(" ");
+    }
+
+    // Add active class to the current control button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn2");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+
+    $(document).ready(function () {
+        
+    $("#arch").nanogallery2({
+        items: [
+          // album 1
+          { src: 'M_J_exterior_1 copy.jpg',                         title: 'BORREGO JIMMY',  ID: 1,	kind:'album' },
+          { src: 'M_J_exterior_1 copy.jpg', srct: 'M_J_exterior_1 copy.jpg', title: '', ID: 11, albumID: 1 },
+          { src: 'M_J_exterior_2 copy.jpg', srct: 'M_J_exterior_2 copy.jpg', title: '', ID: 12, albumID: 1 },
+          { src: 'M_J_exterior_3 copy.jpg', srct: 'M_J_exterior_3 copy.jpg', title: '', ID: 13, albumID: 1 },
+          { src: 'M_J_exterior_4 copy.jpg', srct: 'M_J_exterior_4 copy.jpg', title: '', ID: 14, albumID: 1 },
+          { src: 'M_J_exterior_5 copy.jpg', srct: 'M_J_exterior_5 copy.jpg', title: '', ID: 15, albumID: 1 },
+          { src: 'M_J_exterior_6 copy.jpg', srct: 'M_J_exterior_6 copy.jpg', title: '', ID: 16, albumID: 1 },
+          { src: 'M_J_exterior_7 copy.jpg', srct: 'M_J_exterior_7 copy.jpg', title: '', ID: 17, albumID: 1 },
+          { src: 'M_J_exterior_8 copy.jpg', srct: 'M_J_exterior_8 copy.jpg', title: '', ID: 18, albumID: 1 },
+          { src: 'M_J_exterior_11 copy.jpg', srct: 'M_J_exterior_11 copy.jpg', title: '', ID: 19, albumID: 1 },
+          { src: 'M_J_exterior_12 copy.jpg', srct: 'M_J_exterior_12 copy.jpg', title: '', ID: 20, albumID: 1 },
+          { src: 'M_J_interior_ copy.jpg', srct: 'M_J_interior_ copy.jpg', title: '', ID: 21, albumID: 1 },
+          { src: 'M_J_interior_1 copy.jpg', srct: 'M_J_interior_1 copy.jpg', title: '', ID: 22, albumID: 1 },
+          { src: 'M_J_interior_3 copy.jpg', srct: 'M_J_interior_3 copy.jpg', title: '', ID: 23, albumID: 1 },
+          { src: 'M_J_interior_4 copy.jpg', srct: 'M_J_interior_4 copy.jpg', title: '', ID: 24, albumID: 1 },
+          { src: 'M_J_interior_5 copy.jpg', srct: 'M_J_interior_5 copy.jpg', title: '', ID: 25, albumID: 1 },
+          { src: 'M_J_interior_6 copy.jpg', srct: 'M_J_interior_6 copy.jpg', title: '', ID: 26, albumID: 1 },
+          { src: 'M_J_interior_7 copy.jpg', srct: 'M_J_interior_7 copy.jpg', title: '', ID: 27, albumID: 1 },
+          { src: 'M_J_interior_8 copy.jpg', srct: 'M_J_interior_8 copy.jpg', title: '', ID: 28, albumID: 1 },
+          { src: 'M_J_interior_9 copy.jpg', srct: 'M_J_interior_9 copy.jpg', title: '', ID: 29, albumID: 1 },
+          { src: 'M_J_interior_10 copy.jpg', srct: 'M_J_interior_10 copy.jpg', title: '', ID: 30, albumID: 1 },
+         
+          
+          // album 2
+          {	src: 'TV_exterior_2 copy.jpg',                         title: 'BORREGO T VILLA',  ID: 2,  kind:'album' },
+          { src: 'TV_exterior_2 copy.jpg', srct: 'TV_exterior_2 copy.jpg', title: '', ID: 31, albumID: 2 },
+          { src: 'TV_exterior_3 copy.jpg', srct: 'TV_exterior_3 copy.jpg', title: '', ID: 32, albumID: 2 },
+          { src: 'TV_exterior_4_1 copy.jpg', srct: 'TV_exterior_4_1 copy.jpg', title: '', ID: 33, albumID: 2 },
+          { src: 'TV_exterior_5 copy.jpg', srct: 'TV_exterior_5 copy.jpg', title: '', ID: 34, albumID: 2 },
+          { src: 'TV_interior_1 copy.jpg', srct: 'TV_interior_1 copy.jpg', title: '', ID: 35, albumID: 2 },
+          { src: 'TV_interior_2 copy.jpg', srct: 'TV_interior_2 copy.jpg', title: '', ID: 36, albumID: 2 },
+          { src: 'TV_interior_3 copy.jpg', srct: 'TV_interior_3 copy.jpg', title: '', ID: 37, albumID: 2 },
+          { src: 'TV_interior_4 copy.jpg', srct: 'TV_interior_4 copy.jpg', title: '', ID: 38, albumID: 2 },
+          { src: 'TV_interior_5 copy.jpg', srct: 'TV_interior_5 copy.jpg', title: '', ID: 39, albumID: 2 },
+
+
+           // album 3
+          {	src: 'VH_exterior_2 copy.jpg',                         title: 'BORREGO VILLA',  ID: 3,  kind:'album' },
+          { src: 'VH_exterior_2 copy.jpg', srct: 'VH_exterior_2 copy.jpg', title: '', ID: 40, albumID: 3 },
+          { src: 'VH_exterior_3 copy.jpg', srct: 'VH_exterior_3 copy.jpg', title: '', ID: 41, albumID: 3 },
+          { src: 'VH_exterior_4 copy.jpg', srct: 'VH_exterior_4 copy.jpg', title: '', ID: 42, albumID: 3 },
+          { src: 'VH_exterior_5 copy.jpg', srct: 'VH_exterior_5 copy.jpg', title: '', ID: 43, albumID: 3 },
+          { src: 'VH_interior_1 copy.jpg', srct: 'VH_interior_1 copy.jpg', title: '', ID: 44, albumID: 3 },
+          { src: 'VH_interior_2 copy.jpg', srct: 'VH_interior_2 copy.jpg', title: '', ID: 45, albumID: 3 },
+          { src: 'VH_interior_5 copy.jpg', srct: 'VH_interior_5 copy.jpg', title: '', ID: 46, albumID: 3 },
+          { src: 'VH_interior_6 copy.jpg', srct: 'VH_interior_6 copy.jpg', title: '', ID: 47, albumID: 3 },
+          { src: 'VH_interior_7 copy.jpg', srct: 'VH_interior_7 copy.jpg', title: '', ID: 58, albumID: 3 },
+         
+          // album 4
+          {	src: 'AH_exterior_1.jpg',                         title: 'BORREGO',  ID: 4,  kind:'album' },
+          { src: 'AH_exterior_1.jpg', srct: 'AH_exterior_1.jpg', title: '', ID: 59, albumID: 4 },
+          { src: 'AH_exterior_3.jpg', srct: 'AH_exterior_3.jpg', title: '', ID: 60, albumID: 4 },
+          { src: 'AH_exterior_4.jpg', srct: 'AH_exterior_4.jpg', title: '', ID: 61, albumID: 4 },
+          { src: 'AH_exterior_6.jpg', srct: 'AH_exterior_6.jpg', title: '', ID: 62, albumID: 4 },
+          { src: 'AH_exterior_7.jpg', srct: 'AH_exterior_7.jpg', title: '', ID: 63, albumID: 4 },
+          { src: 'AH_interior_1.jpg', srct: 'AH_interior_1.jpg', title: '', ID: 64, albumID: 4 },
+          { src: 'AH_interior_2.jpg', srct: 'AH_interior_2.jpg', title: '', ID: 65, albumID: 4 },
+          { src: 'AH_interior_3.jpg', srct: 'AH_interior_3.jpg', title: '', ID: 66, albumID: 4 },
+           
+          // album 5
+          { src: 'I.T.M.O.N._FIRST_int_1_result.jpg',                         title: 'Silence',  ID: 5,  kind:'album' },
+          { src: 'I.T.M.O.N._FIRST_int_1_result.jpg', srct: 'I.T.M.O.N._FIRST_int_1_result.jpg', title: '', ID: 67, albumID: 5 },
+          { src: 'I.T.M.O.N._FIRST_int_2_result.jpg', srct: 'I.T.M.O.N._FIRST_int_2_result.jpg', title: '', ID: 68, albumID: 5 },
+          { src: 'I.T.M.O.N._FIRST_int_3_result.jpg', srct: 'I.T.M.O.N._FIRST_int_3_result.jpg', title: '', ID: 69, albumID: 5 },
+          { src: 'I.T.M.O.N._FIRST_int_5_result.jpg', srct: 'I.T.M.O.N._FIRST_int_5_result.jpg', title: '', ID: 70, albumID: 5 },
+          { src: 'I.T.M.O.N._FIRST_result.jpg', srct: 'I.T.M.O.N._FIRST_result.jpg', title: '', ID: 71, albumID: 5 },
+
+          // album 6
+          { src: 'JH_1_result1.jpg',                         title: 'JAMES PREFABRICATED HOUSE',  ID: 6,  kind:'album' },
+          { src: 'JH_1_result1.jpg', srct: 'JH_1_result1.jpg', title: '', ID: 72, albumID: 6 },
+          { src: 'JH_2_result1.jpg', srct: 'JH_2_result1.jpg', title: '', ID: 73, albumID: 6 },
+          { src: 'JH_3_result1.jpg', srct: 'JH_3_result1.jpg', title: '', ID: 74, albumID: 6 },
+          { src: 'JH_4_result1.jpg', srct: 'JH_4_result1.jpg', title: '', ID: 75, albumID: 6 },
+
+          // album 7
+          { src: 'PH_1_result.jpg',                         title: 'MARI POOL HOUSE',  ID: 7,  kind:'album' },
+          { src: 'PH_1_result.jpg', srct: 'PH_1_result.jpg', title: '', ID: 76, albumID: 7 },
+          { src: 'PH_2_result.jpg', srct: 'PH_2_result.jpg', title: '', ID: 77, albumID: 7 },
+
+          // album 8
+          { src: 'genral brutal copy.jpg',                         title: 'TRIBUTE TO BRUTALISM',  ID: 8,  kind:'album' },
+          { src: 'genral brutal copy.jpg', srct: 'genral brutal copy.jpg', title: '', ID: 78, albumID: 8 },
+          { src: 'abstract_pre copy.jpg', srct: 'abstract_pre copy.jpg', title: '', ID: 79, albumID: 8 },
+          { src: 'brutal copy.jpg', srct: 'brutal copy.jpg', title: '', ID: 80, albumID: 8 },
+          { src: 'inside copy.jpg', srct: 'inside copy.jpg', title: '', ID: 81, albumID: 8 },
+          { src: 'flamingo_LAST_ENOUGH copy.jpg', srct: 'flamingo_LAST_ENOUGH copy.jpg', title: '', ID: 77, albumID: 8 },
+        ],
+        thumbnailWidth:  '450px',
+        thumbnailHeight: 'auto',
+        itemsBaseURL:    '/assets/img/1_ARCH/',
+        galleryDisplayTransition:         'slideUp',
+        galleryDisplayTransitionDuration:  500  
+      });
+
+      $("#design").nanogallery2({
+        items: [
+          // album 1
+          { src: '1_TV area copy.jpg',                         title: 'ALESSIA BISHOP AVE',  ID: 9,	kind:'album' },
+          { src: '1_TV area copy.jpg', srct: '1_TV area copy.jpg', title: '', ID: 82, albumID: 9 },
+          { src: '3_TV area copy.jpg', srct: '3_TV area copy.jpg', title: '', ID: 83, albumID: 9 },
+         
+          
+          // album 2
+          {	src: 'A_Buon_Bathroom_18.11.21_1_result.jpg',                         title: 'ALESSIA BUONCONVENTO',  ID: 10,  kind:'album' },
+          { src: 'A_Buon_Bathroom_18.11.21_1_result.jpg', srct: 'A_Buon_Bathroom_18.11.21_1_result.jpg', title: '', ID: 284, albumID: 10 },
+
+          // album 3
+          { src: 'Bedroom_4K_V02_result.jpg',                         title: 'ALESSIABISHOP HORNSEY ROAD',  ID: 11,	kind:'album' },
+          { src: 'Bedroom_4K_V02_result.jpg', srct: 'Bedroom_4K_V02_result.jpg', title: '', ID: 84, albumID: 11 },
+          { src: 'LR_2_result.jpg', srct: 'LR_2_result.jpg', title: '', ID: 85, albumID: 11 },
+
+          // album 4
+          { src: 'Ibiza_Beach_House Bedroom_day_result.jpg',                         title: 'IBIZA BEACH HOUSE',  ID: 12,	kind:'album' },
+          { src: 'Ibiza_Beach_House Bedroom_day_result.jpg', srct: 'Ibiza_Beach_House Bedroom_day_result.jpg', title: '', ID: 86, albumID: 12 },
+          { src: 'Ibiza_Beach_House Bedroom_eve_result.jpg', srct: 'Ibiza_Beach_House Bedroom_eve_result.jpg', title: '', ID: 87, albumID: 12 },
+          { src: 'Ibiza_Beach_House Living_room_1_result.jpg', srct: 'Ibiza_Beach_House Living_room_1_result.jpg', title: '', ID: 88, albumID: 12 },
+          { src: 'Ibiza_Beach_House Living_room_2_result.jpg', srct: 'Ibiza_Beach_House Living_room_2_result.jpg', title: '', ID: 89, albumID: 12 },
+
+          // album 5
+          { src: '1_bathroom_result.jpg',                         title: 'ALESSIABISHOP LONDON APPARTMENT',  ID: 13,	kind:'album' },
+          { src: '1_bathroom_result.jpg', srct: '1_bathroom_result.jpg', title: '', ID: 90, albumID: 13 },
+          { src: '2_bathroom_result.jpg', srct: '2_bathroom_result.jpg', title: '', ID: 91, albumID: 13 },
+          { src: '3_bedroom_result.jpg', srct: '3_bedroom_result.jpg', title: '', ID: 92, albumID: 13 },
+          { src: '4_bedroom_result.jpg', srct: '4_bedroom_result.jpg', title: '', ID: 93, albumID: 13 },
+          { src: '5_Living room_result.jpg', srct: '5_Living room_result.jpg', title: '', ID: 94, albumID: 13 },
+          { src: '6_Living room_result.jpg', srct: '6_Living room_result.jpg', title: '', ID: 95, albumID: 13 },
+          { src: '7_Kitchen_result.jpg', srct: '7_Kitchen_result.jpg', title: '', ID: 96, albumID: 13 },
+
+          // album 6
+          { src: '1bc7a250873065.58dbd523cb83b.jpg',                         title: 'DARIA MAISTAT HERBS',  ID: 14,	kind:'album' },
+          { src: '1bc7a250873065.58dbd523cb83b.jpg', srct: '1bc7a250873065.58dbd523cb83b.jpg', title: '', ID: 97, albumID: 14 },
+          { src: '2dee8250873065.58dbd523ccc5e.jpg', srct: '2dee8250873065.58dbd523ccc5e.jpg', title: '', ID: 98, albumID: 14 },
+          { src: '005bea50873065.58dbd523ca7c1.jpg', srct: '005bea50873065.58dbd523ca7c1.jpg', title: '', ID: 99, albumID: 14 },
+          { src: '55bf0250873065.58dbd523cc2eb.jpg', srct: '55bf0250873065.58dbd523cc2eb.jpg', title: '', ID: 100, albumID: 14 },
+          { src: '85f81e50873065.58dbd523cd6de.jpg', srct: '85f81e50873065.58dbd523cd6de.jpg', title: '', ID: 101, albumID: 14 },
+          { src: 'dc819550873065.58dbd523cb0da.jpg', srct: 'dc819550873065.58dbd523cb0da.jpg', title: '', ID: 102, albumID: 14 },
+
+          // album 7
+          {	src: '1st angle_final_result.jpg',                         title: 'LL AMA',  ID: 15,  kind:'album' },
+          { src: '1st angle_final_result.jpg', srct: '1st angle_final_result.jpg', title: '', ID: 103, albumID: 15 },
+          { src: '2nd angle_result.jpg', srct: '2nd angle_result.jpg', title: '', ID: 104, albumID: 15 },
+
+           // album 8
+          { src: 'LL_GREEN_1.jpg',                         title: 'LL GREEN',  ID: 16,  kind:'album' },
+          { src: 'LL_GREEN_1.jpg', srct: 'LL_GREEN_1.jpg', title: '', ID: 105, albumID: 16 },
+          { src: 'LL_GREEN_2.jpg', srct: 'LL_GREEN_2.jpg', title: '', ID: 106, albumID: 16 },
+
+          // album 9
+          { src: 'MH_BR_1_result.jpg',                         title: 'LL MILO',  ID: 17,	kind:'album' },
+          { src: 'MH_BR_1_result.jpg', srct: 'MH_BR_1_result.jpg', title: '', ID: 107, albumID: 17 },
+          { src: 'MH_BR_2_result.jpg', srct: 'MH_BR_2_result.jpg', title: '', ID: 108, albumID: 17 },
+          { src: 'MH_BR_7_result.jpg', srct: 'MH_BR_7_result.jpg', title: '', ID: 109, albumID: 17 },
+          { src: 'MH_BTR_1_1_result.jpg', srct: 'MH_BTR_1_1_result.jpg', title: '', ID: 110, albumID: 17 },
+          { src: 'MH_BtR_1_result.jpg', srct: 'MH_BtR_1_result.jpg', title: '', ID: 111, albumID: 17 },
+          { src: 'MH_BtR_2_result.jpg', srct: 'MH_BtR_2_result.jpg', title: '', ID: 112, albumID: 17 },
+          { src: 'MH_LR_2_result.jpg', srct: 'MH_LR_2_result.jpg', title: '', ID: 113, albumID: 17 },
+          { src: 'MH_LR_5_1_1_result.jpg', srct: 'MH_LR_5_1_1_result.jpg', title: '', ID: 114, albumID: 17 },
+
+           // album 10
+          { src: 'CASA MAYA_kids bedroom_result.jpg',                         title: 'MARI CASA MAYA',  ID: 18,	kind:'album' },
+          { src: 'Bedroom final_result.jpg', srct: 'Bedroom final_result.jpg', title: '', ID: 115, albumID: 18 },
+          { src: 'CASA MAYA_kids bedroom_result.jpg', srct: 'CASA MAYA_kids bedroom_result.jpg', title: '', ID: 116, albumID: 18 },
+          { src: 'CASA MAYA_OFFICE_result.jpg', srct: 'CASA MAYA_OFFICE_result.jpg', title: '', ID: 117, albumID: 18 },
+          { src: 'Dining final_result.jpg', srct: 'Dining final_result.jpg', title: '', ID: 118, albumID: 18 },
+          { src: 'kids bathroom_result.jpg', srct: 'kids bathroom_result.jpg', title: '', ID: 119, albumID: 18 },
+          { src: 'Kitchen 1 final 1_result.jpg', srct: 'Kitchen 1 final 1_result.jpg', title: '', ID: 120, albumID: 18 },
+          { src: 'Kitchen 1 final 2_result.jpg', srct: 'Kitchen 1 final 2_result.jpg', title: '', ID: 121, albumID: 18 },
+          { src: 'Kitchen 2 final_result.jpg', srct: 'Kitchen 2 final_result.jpg', title: '', ID: 122, albumID: 18 },
+          { src: 'Living room 1 final_result.jpg', srct: 'Living room 1 final_result.jpg', title: '', ID: 123, albumID: 18 },
+          { src: 'Living room 2 final_result.jpg', srct: 'Living room 2 final_result.jpg', title: '', ID: 124, albumID: 18 },
+          { src: 'masterbathroom_1_сor_result.jpg', srct: 'masterbathroom_1_сor_result.jpg', title: '', ID: 125, albumID: 18 },
+          { src: 'masterbathroom_2_result.jpg', srct: 'masterbathroom_2_result.jpg', title: '', ID: 126, albumID: 18 },
+          { src: 'masterbathroom_3_result.jpg', srct: 'masterbathroom_3_result.jpg', title: '', ID: 127, albumID: 18 },
+          { src: 'masterbathroom_4_result.jpg', srct: 'masterbathroom_4_result.jpg', title: '', ID: 128, albumID: 18 },
+
+          // album 11
+          { src: '1_result.jpg',                         title: 'NATA GOLUB DOM',  ID: 19,	kind:'album' },
+          { src: '1_result.jpg', srct: '1_result.jpg', title: '', ID: 129, albumID: 19 },
+          { src: '3_result.jpg', srct: '3_result.jpg', title: '', ID: 130, albumID: 19 },
+          { src: '4_result.jpg', srct: '4_result.jpg', title: '', ID: 131, albumID: 19 },
+          { src: '5_result.jpg', srct: '5_result.jpg', title: '', ID: 132, albumID: 19 },
+          { src: '6_result.jpg', srct: '6_result.jpg', title: '', ID: 133, albumID: 19 },
+          { src: '7_result.jpg', srct: '7_result.jpg', title: '', ID: 134, albumID: 19 },
+          { src: '8_result.jpg', srct: '8_result.jpg', title: '', ID: 135, albumID: 19 },
+          { src: '9_result.jpg', srct: '9_result.jpg', title: '', ID: 136, albumID: 19 },
+          { src: '18_result.jpg', srct: '18_result.jpg', title: '', ID: 137, albumID: 19 },
+          { src: '19_result.jpg', srct: '19_result.jpg', title: '', ID: 138, albumID: 19 },
+          { src: '20_result.jpg', srct: '20_result.jpg', title: '', ID: 139, albumID: 19 },
+          { src: '21_result.jpg', srct: '21_result.jpg', title: '', ID: 140, albumID: 19 },
+          { src: '22_result.jpg', srct: '22_result.jpg', title: '', ID: 141, albumID: 19 },
+          { src: '23_result.jpg', srct: '23_result.jpg', title: '', ID: 142, albumID: 19 },
+          { src: '24_result.jpg', srct: '24_result.jpg', title: '', ID: 143, albumID: 19 },
+          { src: '25_result.jpg', srct: '25_result.jpg', title: '', ID: 144, albumID: 19 },
+          { src: 'Breakfast by Daria Maistat_result.jpg', srct: 'Breakfast by Daria Maistat_result.jpg', title: '', ID: 145, albumID: 19 },
+         
+          // album 12
+          { src: 'N_1_result.jpg',                         title: 'NATA GOLUB WORK DEPOT',  ID: 20,	kind:'album' },
+          { src: 'A_1_result.jpg', srct: 'A_1_result.jpg', title: '', ID: 138, albumID: 20 },
+          { src: 'A_2_result.jpg', srct: 'A_2_result.jpg', title: '', ID: 139, albumID: 20 },
+          { src: 'A_3_result.jpg', srct: 'A_3_result.jpg', title: '', ID: 140, albumID: 20 },
+          { src: 'N_1_result.jpg', srct: 'N_1_result.jpg', title: '', ID: 141, albumID: 20 },
+          { src: 'N_2_result.jpg', srct: 'N_2_result.jpg', title: '', ID: 142, albumID: 20 },
+          { src: 'N_3_result.jpg', srct: 'N_3_result.jpg', title: '', ID: 143, albumID: 20 },
+          { src: 'V_1_result.jpg', srct: 'V_1_result.jpg', title: '', ID: 144, albumID: 20 },
+          { src: 'V_2_result.jpg', srct: 'V_2_result.jpg', title: '', ID: 145, albumID: 20 },
+          { src: 'V_3_result.jpg', srct: 'V_3_result.jpg', title: '', ID: 146, albumID: 20 },
+
+          // album 13
+          { src: '1a_result.jpg',                         title: 'ROUND WINDOW',  ID: 21,	kind:'album' },
+          { src: '1a_result.jpg', srct: '1a_result.jpg', title: '', ID: 147, albumID: 21 },
+          { src: '2a_result.jpg', srct: '2a_result.jpg', title: '', ID: 148, albumID: 21 },
+          { src: '3a_result.jpg', srct: '3a_result.jpg', title: '', ID: 149, albumID: 21 },
+          { src: '4a_result.jpg', srct: '4a_result.jpg', title: '', ID: 150, albumID: 21 },
+          { src: '5a_result.jpg', srct: '5a_result.jpg', title: '', ID: 151, albumID: 21 },
+          { src: '6a_result.jpg', srct: '6a_result.jpg', title: '', ID: 152, albumID: 21 },
+          { src: '7a_result.jpg', srct: '7a_result.jpg', title: '', ID: 153, albumID: 21 },
+          { src: '8a_result.jpg', srct: '8a_result.jpg', title: '', ID: 154, albumID: 21 },
+
+          // album 14
+          { src: 'bathroom_1_result.jpg',                         title: 'ALESSIA VIRBIER',  ID: 22,	kind:'album' },
+          { src: 'bathroom_1_result.jpg', srct: 'bathroom_1_result.jpg', title: '', ID: 155, albumID: 22 },
+          { src: 'bathroom_2_result.jpg', srct: 'bathroom_2_result.jpg', title: '', ID: 156, albumID: 22 },
+          { src: 'bathroom_3_result.jpg', srct: 'bathroom_3_result.jpg', title: '', ID: 157, albumID: 22 },
+          { src: 'bathroom_4_result.jpg', srct: 'bathroom_4_result.jpg', title: '', ID: 158, albumID: 22 },
+          { src: 'bathroom_5_result.jpg', srct: 'bathroom_5_result.jpg', title: '', ID: 159, albumID: 22 },
+          { src: 'bathroom_6_result.jpg', srct: 'bathroom_6_result.jpg', title: '', ID: 160, albumID: 22 },
+          { src: 'bathroom_7_result.jpg', srct: 'bathroom_7_result.jpg', title: '', ID: 161, albumID: 22 },
+          { src: 'Kitchen_v2_result.jpg', srct: 'Kitchen_v2_result.jpg', title: '', ID: 162, albumID: 22 },
+          { src: 'Living room_result.jpg', srct: 'Living room_result.jpg', title: '', ID: 163, albumID: 22 },
+
+
+        ],
+        thumbnailWidth:  '450px',
+        thumbnailHeight: 'auto',
+        itemsBaseURL:    '/assets/img/2_DIZ/',
+        galleryDisplayTransition:         'slideUp',
+        galleryDisplayTransitionDuration:  500  
+      });
+      $("#product").nanogallery2({
+        items: [
+          // album 1
+          { src: '1_FC_result.jpg',                         title: 'FIGURES',  ID: 23,	kind:'album' },
+          { src: '1_FC_result.jpg', srct: '1_FC_result.jpg', title: '', ID: 164, albumID: 23 },
+         
+          
+          // album 2
+          {	src: '1_sink room_result.jpg',                         title: 'LL SINK ROOM',  ID: 24,  kind:'album' },
+          { src: '1_sink room_paspartu_result.jpg', srct: '1_sink room_result.jpg', title: '', ID: 165, albumID: 24 },
+          { src: '2_sink room_paspartu_result.jpg', srct: '2_sink room_result.jpg', title: '', ID: 166, albumID: 24 },
+          { src: '3_sink room_paspartu_result.jpg', srct: '3_sink room_result.jpg', title: '', ID: 167, albumID: 24 },
+          { src: '4_sink room_paspartu_result.jpg', srct: '4_sink room_result.jpg', title: '', ID: 168, albumID: 24 },
+
+          // album 3
+          {	src: 'MC_1_result.jpg',                         title: 'MARIN GRUBIK COOPER LAMPS',  ID: 25,  kind:'album' },
+          { src: 'MC_1_result.jpg', srct: 'MC_1_result.jpg', title: '', ID: 169, albumID: 25 },
+          { src: 'MC_2_result.jpg', srct: 'MC_2_result.jpg', title: '', ID: 170, albumID: 25 },
+          { src: 'MC_3_result.jpg', srct: 'MC_3_result.jpg', title: '', ID: 171, albumID: 25 },
+          { src: 'MC_4_result.jpg', srct: 'MC_4_result.jpg', title: '', ID: 172, albumID: 25 },
+          { src: 'MC_5_result.jpg', srct: 'MC_5_result.jpg', title: '', ID: 173, albumID: 25 },
+          { src: 'MC_6_result.jpg', srct: 'MC_6_result.jpg', title: '', ID: 174, albumID: 25 },
+          { src: 'MC_7_result.jpg', srct: 'MC_7_result.jpg', title: '', ID: 175, albumID: 25 },
+          { src: 'MC_8_result.jpg', srct: 'MC_8_result.jpg', title: '', ID: 176, albumID: 25 },
+
+          // album 4
+          {	src: 'MW_1_result.jpg',                         title: 'MARTIN GRUBIK WINDOW',  ID: 26,  kind:'album' },
+          { src: 'MW_1_result.jpg', srct: 'MW_1_result.jpg', title: '', ID: 176, albumID: 26 },
+          { src: 'MW_2_result.jpg', srct: 'MW_2_result.jpg', title: '', ID: 177, albumID: 26 },
+          { src: 'MW_3_result.jpg', srct: 'MW_3_result.jpg', title: '', ID: 178, albumID: 26 },
+          { src: 'MW_4_result.jpg', srct: 'MW_4_result.jpg', title: '', ID: 179, albumID: 26 },
+          { src: 'MW_5_result.jpg', srct: 'MW_5_result.jpg', title: '', ID: 180, albumID: 26 },
+          { src: 'MW_6_result.jpg', srct: 'MW_6_result.jpg', title: '', ID: 181, albumID: 26 },
+        
+          // album 5
+          {	src: 'f066ae53782927.594107e78de69.jpg',                         title: 'MOOOI SOFA',  ID: 27,  kind:'album' },
+          { src: 'f066ae53782927.594107e78de69.jpg', srct: 'f066ae53782927.594107e78de69.jpg', title: '', ID: 182, albumID: 27 },
+
+          // album 6
+          {	src: 'LIGHT_1.jpg',                         title: 'VIBIA TRIBUTE',  ID: 28,  kind:'album' },
+          { src: 'LIGHT_1.jpg', srct: 'LIGHT_1.jpg', title: '', ID: 182, albumID: 28 },
+          { src: 'LIGHT_2.jpg', srct: 'LIGHT_2.jpg', title: '', ID: 183, albumID: 28 },
+          { src: 'LIGHT_3.jpg', srct: 'LIGHT_3.jpg', title: '', ID: 184, albumID: 28 },
+          { src: 'LIGHT_4.jpg', srct: 'LIGHT_4.jpg', title: '', ID: 185, albumID: 28 },
+          { src: 'LIGHT_5.jpg', srct: 'LIGHT_5.jpg', title: '', ID: 186, albumID: 28 },
+
+           // album 7
+           { src: 'AURE_1_result.jpg',                         title: 'WOOMETRY',  ID: 29,  kind:'album' },
+           { src: 'AURE_1_result.jpg', srct: 'AURE_1_result.jpg', title: '', ID: 187, albumID: 29 },
+           { src: 'AURE_2_result.jpg', srct: 'AURE_2_result.jpg', title: '', ID: 188, albumID: 29 },
+           { src: 'AURE_3_result.jpg', srct: 'AURE_3_result.jpg', title: '', ID: 189, albumID: 29 },
+           { src: 'Composition_2_result.jpg', srct: 'Composition_2_result.jpg', title: '', ID: 190, albumID: 29 },
+           { src: 'Interior_1_result.jpg', srct: 'Interior_1_result.jpg', title: '', ID: 191, albumID: 29 },
+         
+        ],
+        thumbnailWidth:  '450px',
+        thumbnailHeight: 'auto',
+        itemsBaseURL:    '/assets/img/3_PROD/',
+        galleryDisplayTransition:         'slideUp',
+        galleryDisplayTransitionDuration:  500, 
+        thumbnailLazyLoad     : false,
+      });
+    });
+
+    function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+    }
+
+
+    function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+    }
+
+    // scroll to contacts
+
+    var hiddenElement = document.getElementById("contacts_bot");
+    var btn = document.querySelector('.btn');
+
+    function handleButtonClick() {
+    hiddenElement.scrollIntoView({block: "center", behavior: "smooth"});
+    }
+
+
+ 
+    $('div[filterDiv]').on('show', function (e) {
+    var target = $(e.target).attr("data-gallery") // activated tab
+    $(target).nanogallery2('refresh');
+    })
+
+    // btn.addEventListener('click', handleButtonClick);
+</script>
+

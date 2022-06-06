@@ -12,6 +12,8 @@
         type="text/css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js">
     </script>
+     <link rel="stylesheet" href="/splide-4.0.6/dist/css/splide.min.css" type="text/css">
+     <script src="/splide-4.0.6/dist/js/splide.min.js"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/fav/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/fav/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/fav/favicon-16x16.png">
@@ -51,31 +53,39 @@
         </nav>
     </header>
     <article>
-        <!-- Control buttons -->
-        <div id="myBtnContainer">
-            <button class="btn2 active" onclick="filterSelection('all')"> SHOW ALL</button>
-            <button class="btn2" onclick="filterSelection('ARCHITECTURE')">ARCHITECTURE</button>
-            <button class="btn2" onclick="filterSelection('DESIGN')">DESIGN</button>
-            <button class="btn2" onclick="filterSelection('PRODUCT')">PRODUCT</button>
-        </div>
-
-        <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
-        <div class="container">
-
-            <div class="filterDiv  ARCHITECTURE">
-                <div id="arch"></div>
+        <section class="splide" aria-label="" >
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <!-- <li class="splide__slide">
+                        <div>
+                            <h1>ALL</h1>
+                            <div id="arch"></div>
+                            <div id="design"></div>
+                            <div id="product"></div>
+                        </div>
+                    </li> -->
+                    <li class="splide__slide">
+                        <div class="ARCHITECTURE">
+                            <h1>ARCHITECTURE <span class="garrow">>></span></h1>
+                            <div id="arch"></div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="DESIGN">
+                            <h1>DESIGN <span class="garrow">></span></h1>
+                            <div id="design"></div>
+                        </div>
+    
+                    </li>
+                    <li class="splide__slide">
+                        <div class="PRODUCT">
+                            <h1>PRODUCT <span class="garrow"><<</span></h1>
+                            <div id="product"></div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-
-            <div class="filterDiv  DESIGN">
-                <div id="design"></div>
-            </div>
-
-
-            <div class="filterDiv  PRODUCT">
-                <div id="product"></div>
-            </div>
-            
-        </div>
+        </section>
     </article>
 
 
@@ -117,74 +127,10 @@
 <script>
 
 
-    window.addEventListener('load', function(){
-        var target = document.querySelector('#design');
-        console.log(target)
-        $(target).nanogallery2('refresh');
+    var splide = new Splide('.splide');
+    splide.mount();
 
-    }) ;
-    window.addEventListener('load', function(){
-        var target = document.querySelector('#product');
-        console.log(target)
-        $(target).nanogallery2('refresh');
-
-    }) ;
-    window.addEventListener('load', function(){
-        var target = document.querySelector('#arch');
-        console.log(target)
-        $(target).nanogallery2('refresh');
-
-    }) ;
-
-    // Filter
-    filterSelection("all")
-
-    function filterSelection(c) {
-        var x, i;
-        x = document.getElementsByClassName("filterDiv");
-        if (c == "all") c = "";
-        // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
-        for (i = 0; i < x.length; i++) {
-            w3RemoveClass(x[i], "show");
-            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-        }
-    }
-
-    // Show filtered elements
-    function w3AddClass(element, name) {
-        var i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-            if (arr1.indexOf(arr2[i]) == -1) {
-                element.className += " " + arr2[i];
-            }
-        }
-    }
-
-    // Hide elements that are not selected
-    function w3RemoveClass(element, name) {
-        var i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-            while (arr1.indexOf(arr2[i]) > -1) {
-                arr1.splice(arr1.indexOf(arr2[i]), 1);
-            }
-        }
-        element.className = arr1.join(" ");
-    }
-
-    // Add active class to the current control button (highlight it)
-    var btnContainer = document.getElementById("myBtnContainer");
-    var btns = btnContainer.getElementsByClassName("btn2");
-    for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function () {
-            var current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace(" active", "");
-            this.className += " active";
-        });
-    }
+    
 
     $(document).ready(function () {
         
@@ -507,17 +453,9 @@
     var hiddenElement = document.getElementById("contacts_bot");
     var btn = document.querySelector('.btn');
 
-    function handleButtonClick() {
-    hiddenElement.scrollIntoView({block: "center", behavior: "smooth"});
-    }
+ 
 
 
  
-    $('div[filterDiv]').on('show', function (e) {
-    var target = $(e.target).attr("data-gallery") // activated tab
-    $(target).nanogallery2('refresh');
-    })
-
-    // btn.addEventListener('click', handleButtonClick);
 </script>
 
