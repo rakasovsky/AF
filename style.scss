@@ -339,8 +339,12 @@ section {
             transition: background-color .3s ease;
             letter-spacing: 1px;
             margin-top: 20px;
-            margin-left: 10px;
+            // margin-left: 10px;
         }
+    }
+
+    .recaptc{
+        margin-top: 25px;
     }
     
 }
