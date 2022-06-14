@@ -350,6 +350,10 @@ section {
 }
 
 // Gallery page
+.nGY2 .nGY2GThumbnailAlbumTitle, .nGY2 .nGY2GThumbnailDescription, .nGY2 .nGY2GThumbnailImageTitle {
+    Text-Shadow: none!important;
+}
+
 article {
     // height: 100vh;
     margin: 5% 60px;
