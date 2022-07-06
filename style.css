@@ -167,7 +167,6 @@ img {
 }
 
 .main div {
-  max-width: 690px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -181,6 +180,8 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transform: translateY(-10vh);
+          transform: translateY(-10vh);
 }
 
 .main div img {
@@ -195,9 +196,14 @@ img {
           transform: translateY(-2px);
 }
 
+.t_logo {
+  font-size: 10em;
+  font-weight: bold;
+}
+
 .subtitle {
   font-family: Tahoma;
-  font-size: 64px;
+  font-size: 2.6em;
 }
 
 section {
@@ -582,8 +588,16 @@ article {
 }
 
 @media (max-width: 600px) {
+  .main div {
+    -webkit-transform: translateY(0vh);
+            transform: translateY(0vh);
+  }
   .dlogo {
     display: none;
+  }
+  .t_logo {
+    font-size: 7em;
+    font-weight: bold;
   }
   nav {
     padding-bottom: 0;

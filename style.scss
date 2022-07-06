@@ -128,11 +128,12 @@ img{
     justify-content: center;
     align-items: center;
     div{
-        max-width: 690px;
+        // max-width: 690px;
         display:flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        transform: translateY(-10vh);
         img{
             width: 65%;
         }
@@ -142,9 +143,13 @@ img{
     display: inline-flex;
     transform: translateY(-2px);
 }
+.t_logo {
+    font-size:10em;
+    font-weight: bold;
+}
 .subtitle {
     font-family: Tahoma;
-    font-size: 64px;
+    font-size: 2.6em;
 }
 section {
     display: flex;
@@ -464,8 +469,15 @@ article {
  }
 
  @media (max-width: 600px) { 
+    .main div {
+        transform: translateY(0vh);
+    }
     .dlogo{
         display: none;
+    }
+    .t_logo {
+        font-size: 7em;
+        font-weight: bold;
     }
     nav {
         padding-bottom: 0;
